@@ -1,2 +1,4 @@
-This code is to help with inputing names of people or guest for an event
-It involves a HTML file and an javascript file that uses Dom to interact with the HTML file
+# EVENT GUEST LIST MANAGER
+This here is a project that allows people to add guest or visitors to an event that they attend.
+The main aim is that once a user inputs the guests name they should see ;
+1 The name of the guest
