@@ -7,7 +7,7 @@ The main aim is that once a user inputs the guest's name, they should see ;
 *  An add button that adds the guest's name
 
 # How to use it
-Simply input the name of the guest you want to add, categorize them according to your preference, then simply click the button to add them to the list. 
+You can add guests by entering their names, categorizing them according to your preference, and then clicking the button to add them to the list. 
 
 # THE AUTHORS
-To put it simply, this project was created by Daniel Kariuki Ndungu as a contribution to an individual project. 
+To put it simply, Daniel Kariuki Ndungu created this project as a contribution to an individual project. 
