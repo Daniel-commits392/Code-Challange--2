@@ -1,25 +1,19 @@
-// form to input name
-// a submit button that add the name
-//delete buton to remove the name
-//should be at each guest
-// limiting facor ten people 
+
 
 const myVisitorName = document.getElementById('myVisitorName');
 const addButton = document.getElementById('inputVisitor');
 const rollList = document.getElementById('roll');
 const clearList = document.getElementById('clearList');
 const visitorType = document.getElementById('visitorType');
+const visitorForm=document.getElementById('visitorForm')
 
-//console.log(myVisitorName);
-//console.log(addButton) ;
-//console.log(rollList);
-//console.log( clearList);
-//console.log(visitorType);
 
 let visitorsTotal = 0;
 const peoplesNames = new Set();
 
-addButton.addEventListener('click', function() {
+visitorForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
   const theVisitorsName = myVisitorName.value.trim();
   const type =visitorType.value;
 
@@ -29,7 +23,7 @@ if (theVisitorsName ==="") {
     return;
   };
 
-  if (visitorsTotal > 10) {
+  if (visitorsTotal >=10) {
     alert("The guest list is full. Cannot add more guests.");
     return;
   }
@@ -41,11 +35,15 @@ if (theVisitorsName ==="") {
       return;
     }
 
-    rollList.innerHTML += 
-    `<li>
-    ${theVisitorsName} (${type})
-     <button class="deleteButton">Delete</button>
-     </li>`;
+  const li=document.createElement('li');
+  li.setAttribute('data-name', lowerName);
+  
+  li.innerHTML=`
+  ${theVisitorsName} (${type})
+  <button class ='rsvpButton'>Attending</button>
+  <button class='deleteButton'>Delete</button>`;
+
+    rollList.appendChild(li); 
 
     peoplesNames.add(lowerName);
     visitorsTotal++;
@@ -59,14 +57,17 @@ clearList.addEventListener('click', function() {
   visitorsTotal = 0;
 });
 
-rollList.addEventListener('click',function(events) {
-  if (events.target.classList.contains('deleteButton')){
-    const listItem = events.target.parentElement;
-    const visitorName = listItem.firstChild.textContent.split(' ')[0].toLowerCase();
-    
+rollList.addEventListener('click',function(event) {
+  if (event.target.classList.contains('deleteButton')){
+    const listItem = event.target.parentElement;
+    const visitorName = listItem.getAttribute('data-name');
     peoplesNames.delete(visitorName);
     listItem.remove();
     visitorsTotal--;
+  }
+  if (event.target.classList.contains('rsvpButton')){
+    const btn =event.target;
+    btn.textContent=btn.textContent==='Attending' ? 'Not Attending' : 'Attending';
   }
 });
 

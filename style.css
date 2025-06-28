@@ -14,7 +14,7 @@ h1{
     text-decoration: underline;    
 }
 p{
-    color: rgb(5, 5, 5);
+    color: white;
     font-size: 20px;
     text-align: center;
 }
@@ -58,4 +58,42 @@ p{
     color: yellow;
     font-size: 20px;
     border-radius: 18px;
+}
+
+#roll li{
+    margin: 10px 0;
+    padding: 5px 10px;
+    background-color: rgb(0,0,0,0.6);
+    border-radius: 10px;
+    list-style: none;
+}
+#roll li:hover{
+    background-color: rgb(14, 13, 13);
+}
+#roll .rsvpButton {
+  margin-left: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#roll .rsvpButton:hover {
+  background-color: darkgreen;
+}
+
+#roll .deleteButton {
+  margin-left: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#roll .deleteButton:hover {
+  background-color: darkred;
 }

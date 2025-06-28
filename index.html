@@ -15,21 +15,23 @@
     <p>Feel free to add multiple visitors by entering their names and selecting their categories.</p>
     <p>Thank you for joining us!</p>
 
-    <div  id="guestList">
+    <div id="guestList">
+
+        <form id="visitorForm">
         <input type="text" id="myVisitorName" placeholder="Enter visitor name">
-      
         <select id="visitorType">
             <option value="Friend">Friend</option>
             <option value="Family">Family</option>
             <option value="Colleague">Colleague</option>
             <option value="Other">Other</option>
         </select>
-        <button id="inputVisitor">Add Visitor</button>
-       
+        <button  type="submit" id="inputVisitor">Add Visitor</button>
+         </form>
+         
         <button id="clearList">Clear List</button>
-    </div>
+    
     <ul id="roll"></ul>
    
- <script src="index.js"></script>
+ <script src="src/index.js"></script>
 </body>
 </html>
